@@ -124,3 +124,8 @@ func SkipEmptyCells(flags *cellVisitorFlags) {
 func (r *Row) ForEachCell(cvf CellVisitorFunc, option ...CellVisitorOption) error {
 	return r.cellStoreRow.ForEachCell(cvf, option...)
 }
+
+// GetCellCount get cell count
+func (r *Row) GetCellCount() int {
+	return r.cellStoreRow.CellCount()
+}
