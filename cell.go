@@ -232,7 +232,7 @@ func (c *Cell) IsTime() bool {
 	return c.parsedNumFmt.isTimeFormat
 }
 
-//GetTime returns the value of a Cell as a time.Time
+// GetTime returns the value of a Cell as a time.Time
 func (c *Cell) GetTime(date1904 bool) (t time.Time, err error) {
 	f, err := c.Float()
 	if err != nil {
@@ -392,6 +392,7 @@ func (c *Cell) SetHyperlink(hyperlink string, displayText string, tooltip string
 
 // SetValue sets a cell's value to any type.
 func (c *Cell) SetValue(n interface{}) {
+	c.Row.isCustom = true
 	c.updatable()
 	switch t := n.(type) {
 	case time.Time:
