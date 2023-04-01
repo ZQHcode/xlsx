@@ -392,7 +392,6 @@ func (c *Cell) SetHyperlink(hyperlink string, displayText string, tooltip string
 
 // SetValue sets a cell's value to any type.
 func (c *Cell) SetValue(n interface{}) {
-	c.Row.isCustom = true
 	c.updatable()
 	switch t := n.(type) {
 	case time.Time:
