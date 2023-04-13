@@ -641,7 +641,7 @@ func (s *Sheet) prepWorksheetFromRows(worksheet *xlsxWorksheet, relations *xlsxW
 			return nil
 		}
 
-		return row.ForEachCell(prepCell, SkipEmptyCells)
+		return row.ForEachCell(prepCell)
 	}
 
 	err := s.ForEachRow(prepRow, SkipEmptyRows)
